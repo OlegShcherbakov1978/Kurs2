@@ -1,17 +1,16 @@
-from collections import OrderedDict
+# Задача 2. Личные данные
+# Необходимо написать функцию, принимающую неопределенное количество данных о сотрудниках в виде пар ключ = значение.
+# Вывести эту информацию в более удобном виде(как в примерах). Важное условие - ключи должны быть отсортированы по алфавиту, т.е. в лексикографическом порядке.
+
+# Примеры вызова и вывода функции
+
+# Вызов #1:
+
+def func(**kwargs):
+
+    for k, v in sorted(kwargs.items()):
+        print("{0}: {1}".format(k, v))
 
 
-def workers():
-    workers_list = {}
-
-    while True:
-        a = input('введите параметр (для окончания ввода введите "stop"): ')
-        if a == "stop":
-            break
-        b = input('введите значение: ')
-        workers_list[a] = b
-    return workers_list
-
-
-for k, v in OrderedDict(sorted(workers().items())).items():
-    print("{0}: {1}".format(k, v))
+func(first_name='John', last_name='Doe',
+     age=28, position='Python developer')
